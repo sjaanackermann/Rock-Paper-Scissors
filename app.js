@@ -47,3 +47,29 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
+function game() {
+    for (let i=0;i<5;i++) {
+        let playerSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
+        let computerSelection = computerPlay();
+        console.log(playRound(playerSelection, computerSelection));
+        console.log(`Player wins: Total Score ${playerScore}`);
+        console.log(`Computer wins: Total Score ${computerScore}`);
+    }
+    if (playerScore > computerScore) {
+        console.log("Congratulations, You are the Winner!");
+    } else if (computerScore > playerScore) {
+        console.log("Too bad, the Computer won");
+    } else {
+        console.log("No one wins... You are tied with the Computer");
+    }
+    if (playerScore > computerScore) {
+        alert("Congratulations, You are the Winner!");
+    } else if (computerScore > playerScore) {
+        alert("Too bad, the Computer won");
+    } else {
+        alert("No one wins... You are tied with the Computer");
+    }
+}
+
+game();
