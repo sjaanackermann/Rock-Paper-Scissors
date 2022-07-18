@@ -1,5 +1,6 @@
 let computerScore = 0;
 let playerScore = 0;
+const choices = ["rock", "paper", "scissors"];
 
 function computerPlay(){
     const choice = Math.floor(Math.random() * 3);
@@ -50,26 +51,49 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i=0;i<5;i++) {
-        let playerSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
+        let playerSelection = prompt("Rock, Paper, Scissors?");
+        while(playerSelection == null) {
+            playerSelection = prompt('Rock, Paper, or Scissors?');
+        }
+        playerSelection = playerSelection.toLowerCase().trim();
+        let check = validateInput(playerSelection);
+        while (check == false){
+            playerSelection = prompt(
+              'Rock, Paper, or Scissors? Check your spelling, capitalization does not matter'
+            );
+            while(playerSelection == null) {
+                playerSelection = prompt('Rock, Paper, or Scissors?');
+            }
+            playerSelection = playerSelection.toLowerCase().trim();
+            check = validateInput(playerSelection);
+        }        
         let computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
         console.log(`Player: Total Score ${playerScore}`);
         console.log(`Computer: Total Score ${computerScore}`);
-    }
-    if (playerScore > computerScore) {
-        console.log("Congratulations, You are the Winner!");
-    } else if (computerScore > playerScore) {
-        console.log("Too bad, the Computer won");
-    } else {
-        console.log("No one wins... You are tied with the Computer");
-    }
-    if (playerScore > computerScore) {
-        alert("Congratulations, You are the Winner!");
-    } else if (computerScore > playerScore) {
-        alert("Too bad, the Computer won");
-    } else {
-        alert("No one wins... You are tied with the Computer");
+    
+        if (playerScore > computerScore) {
+            console.log("Congratulations, You are the Winner!");
+        } else if (computerScore > playerScore) {
+            console.log("Too bad, the Computer won");
+        } else {
+            console.log("No one wins... You are tied with the Computer");
+        }
+        if (playerScore > computerScore) {
+            alert("Congratulations, You are the Winner!");
+        } else if (computerScore > playerScore) {
+            alert("Too bad, the Computer won");
+        } else {
+            alert("No one wins... You are tied with the Computer");
+        }
     }
 }
 
-game();
+function validateInput(input){
+    if(choices.includes(input)){
+        return true;
+    } 
+    return false;
+}
+
+game()
