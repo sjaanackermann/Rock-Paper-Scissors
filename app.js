@@ -53,8 +53,8 @@ function game() {
         let playerSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
         let computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
-        console.log(`Player wins: Total Score ${playerScore}`);
-        console.log(`Computer wins: Total Score ${computerScore}`);
+        console.log(`Player: Total Score ${playerScore}`);
+        console.log(`Computer: Total Score ${computerScore}`);
     }
     if (playerScore > computerScore) {
         console.log("Congratulations, You are the Winner!");
