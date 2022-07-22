@@ -1,10 +1,24 @@
 #scoreboard {
-color: black;
+    color: rgb(255, 255, 255);
 }
-
 #playerOptions {
-    color: black;
+    color: rgb(255, 255, 255);
+}
+.btnSelect{
+    color: rgb(255, 255, 255);
+}
+#Rock {
+    color: rgb(255, 255, 255);
+}
+#Paper {
+    color: rgb(255, 255, 255);
+}
+#Scissors {
+    color: rgb(255, 255, 255);
 }
 #newGame {
-    color: black;
+    color: rgb(255, 255, 255);
+}
+#start {
+    color: rgb(255, 255, 255);
 }
