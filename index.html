@@ -16,18 +16,22 @@
         <section id="scoreboard">
             <table>
                 <tr>
-                    <th>Player</th>
+                    <th class="scores">Player</th>
                     <th></th>
-                    <th>Computer</th>
+                    <th class="scores">Computer</th>
                 </tr>
                 <tr>
-                    <td id="player-score">0</td>
-                    <td>scores</td>
-                    <td id="computer-score">0</td>
+                    <td class="scores" id="player-score">0</td>
+                    <td id="middle">scores</td>
+                    <td class="scores" id="computer-score">0</td>
                 </tr>
             </table>
         </section>
-
+        <hr id="line">
+        <section id="instructions">
+            <h3>The first to reach 5 points is the WINNER!</h3>
+            <p id="drawResult">Click "Start a New Game"</p>
+        </section>
         <section id="playerOptions">
             <button class="btnSelect" id="Rock">Rock</button>
             <button class="btnSelect" id="Paper">Paper</button>
