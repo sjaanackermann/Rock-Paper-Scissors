@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <script src="./js/app.js" defer></script> -->
+    <script src="./js/app.js" defer></script>
     <link href="./css/style.css" rel="stylesheet">
     <title>Rock-Paper-Scissors</title>
 </head>
@@ -14,23 +14,35 @@
     </header>
     <main>
         <section id="scoreboard">
-            <table>
+            <table id="player-score-field" class="score-field">
                 <tr>
                     <th class="scores">Player</th>
-                    <th></th>
-                    <th class="scores">Computer</th>
                 </tr>
                 <tr>
                     <td class="scores" id="player-score">0</td>
-                    <td id="middle">scores</td>
+                </tr>
+            </table> 
+            <table>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td id="middle">vs</td>
+                </tr>
+            </table>      
+            <table id="computer-score-field" class="score-field">
+                <tr>
+                    <th class="scores">Computer</th>
+                </tr>
+                <tr>
                     <td class="scores" id="computer-score">0</td>
                 </tr>
-            </table>
+            </table> 
         </section>
         <hr id="line">
-        <section id="instructions">
-            <h3>The first to reach 5 points is the WINNER!</h3>
-            <p id="drawResult">Click "Start a New Game"</p>
+        <section id="topIntro">
+            <h3 id="instructions">The first to reach 5 points is the WINNER!</h3>
+            <p id="log">Click "Start a New Game"</p>
         </section>
         <section id="playerOptions">
             <button class="btnSelect" id="Rock">Rock</button>
@@ -39,7 +51,7 @@
         </section>
 
         <section id="newGame">
-            <button id="start">Start a New Game</button>
+            <button id="start" class="button-enabled">Start a New Game</button>
         </section>
     </main>
 </body>
